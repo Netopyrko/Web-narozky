@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otázka...</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Mám jednu otázku...</h1>
+        
+        <div class="photo-frame">
+            <img src="img/ples.jpeg" alt="My">
+        </div>
+
+        <p id="puvodni-text">Zítra je Valentýn. A já bych ho chtěl strávit s tebou.</p>
+        
+        <p id="otazka"><strong>Budeš mojí Valentýnkou? 🌹</strong></p>
+
+        <button class="btn heart-beat" onclick="reklaAno()">ANO, budu!</button>
+    </div>
+
+    <script>
+        function reklaAno() {
+            // Vystřelí konfety
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#e91e63', '#ffffff']
+            });
+
+            // 1. Změní nadpis
+            document.querySelector('h1').innerText = "Miluju tě! ❤️";
+            
+            // 2. Změní ten první odstavec na instrukce k dárku
+            document.getElementById('puvodni-text').innerHTML = "Těším se na zítřek💖";
+            
+            // 3. ZMĚNA: Skryje otázku "Budeš mojí Valentýnkou?"
+            document.getElementById('otazka').style.display = "none";
+
+            // 4. Skryje tlačítko
+            document.querySelector('button').style.display = "none";
+            
+            // 5. Obarví rámeček fotky na zlato
+            document.querySelector('.photo-frame').style.borderColor = "#ffeb3b"; 
+        }
+    </script>
+</body>
+</html>

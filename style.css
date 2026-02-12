@@ -1,0 +1,105 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Pacifico&display=swap');
+
+:root {
+    --primary-color: #e91e63; /* Růžová/Valentýnská */
+    --bg-color: #fdf2f5;      /* Velmi světle růžová */
+    --text-color: #333;
+    --card-bg: #ffffff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px; /* Aby to na PC nebylo moc roztažené */
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(233, 30, 99, 0.15);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive; /* Ozdobné písmo pro nadpisy */
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.photo-frame {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 3px solid var(--primary-color);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.clue-box {
+    background-color: #fff0f5;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 5px solid var(--primary-color);
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: transform 0.2s;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* Animace pro tlačítko ANO */
+.heart-beat {
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
